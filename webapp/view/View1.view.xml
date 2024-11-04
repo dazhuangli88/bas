@@ -1,0 +1,67 @@
+<mvc:View controllerName="ivy.uicomputerrequestappivy.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    
+    <VBox class="sapUiSmallMargin">
+        <Panel headerText="{i18n>appTitle}"> <!-- 使用国际化文本绑定 -->
+            <VBox class="sapUiSmallMargin">
+                <HBox class="sapUiSmallMarginBottom">
+
+                    <Label text="{i18n>employeeID}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    
+                    <Label text="Employee ID" />
+                    <Input
+                      id="employeeId"
+                      width="200px"
+                      value="{view>/form/employeeId}"
+                      showValueHelp="true"
+                      valueHelpRequest="onEmployeeIdHelp" />
+                      
+                <!-- </HBox>
+                <HBox class="sapUiSmallMarginBottom"> -->
+                    <Label text="{i18n>employeeName}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="employeeName" width="200px" editable="false" value="{view>/form/employeeName}" />
+                <!-- </HBox>
+                <HBox class="sapUiSmallMarginBottom"> -->
+                    <Label text="{i18n>department}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <ComboBox id="department" width="200px" selectedKey="{view>/form/department}"/>
+                </HBox>
+                <HBox class="sapUiSmallMarginBottom">
+                    <Label text="{i18n>category}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <ComboBox id="category" width="200px" selectionChange="onCategoryChange" selectedKey="{view>/form/category}">
+                        <core:Item key="NB" text="NB"/>
+                        <core:Item key="DT" text="DT"/>
+                    </ComboBox>
+                </HBox>
+                <HBox id="monitorBrandHbox" class="sapUiSmallMarginBottom" visible="false">
+                    <Label text="{i18n>monitorBrand}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="monitorBrand" width="200px" value="{view>/form/monitorBrand}"/> 
+                </HBox>
+                <HBox id="hostBrandHbox" class="sapUiSmallMarginBottom" visible="false">
+                    <Label text="{i18n>hostBrand}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="hostBrand" width="200px" value="{view>/form/hostBrand}"/>
+                </HBox>
+                <HBox id="nbBrandHbox" class="sapUiSmallMarginBottom" visible="false">
+                    <Label text="{i18n>nbBrand}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="nbBrand" width="200px" value="{view>/form/nbBrand}"/> 
+                </HBox>
+                <HBox class="sapUiSmallMarginBottom">
+                    <Label text="{i18n>language}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="language" width="200px" placeholder="EN/ZH/ZF" value="{view>/form/language}"/> 
+                </HBox>
+                <HBox class="sapUiSmallMarginBottom">
+                    <Label text="{i18n>sysOperation}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <Input id="sysOperation" width="200px" placeholder="Win7/Win10/Win11" value="{view>/form/sysOperation}"/>
+                </HBox>
+                <HBox class="sapUiSmallMarginBottom">
+                    <Label text="{i18n>purpose}" width="150px"/> <!-- 使用国际化文本绑定 -->
+                    <TextArea id="purpose" width="910px" height="150px" value="{view>/form/purpose}"/> <!-- 使用 TextArea 并设置宽度和高度 -->
+                </HBox>
+                <HBox justifyContent="End" alignItems="End" width="100%">
+                    <Button text="{i18n>submit}" press="onSubmit" class="sapUiTinyMarginBottom"/> 
+                </HBox>
+            </VBox>
+        </Panel>
+    </VBox>
+</mvc:View>
